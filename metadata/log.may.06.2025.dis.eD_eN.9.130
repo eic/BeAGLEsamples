@@ -8540,5 +8540,5 @@ STOP        0.00      0.00      0.00      0.00      0.00      0.00
 Using eic-smear version: 1.1.14
 
 abconv -v 0.1.3
-abconv "$input" --preset "ip6_eD_130x10" --plot-off -o "$output"
+abconv "$input" --preset "ip6_eD_130x9" --plot-off -o "$output"
 
