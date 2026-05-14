@@ -11,7 +11,7 @@
 * projectile / target
 * -------------------
 PROJPAR                                                               ELECTRON
-TARPAR          3.0        2.0        
+TARPAR          3.0        2.0	      
 TAUFOR          10.0       25.0       1.0
 FERMI           2          0.62       1        0
 * random number
@@ -28,13 +28,13 @@ PARDECAY            2
 *DIFFRACT         -3         0         0         0
 * lepton tagger to sample events with certain kinematics cuts
 *		yMin      yMax    Q2Min    Q2Max   theta_Min theta_Max 
-L-TAG           0.01     0.95       2.0     10.0       0.0      6.29
+L-TAG           0.01     0.95       100.0     10000.0       0.0      6.29
 *VDM-PAR2           1        1         0
 * model selection
 USERSET          15           9.0
 MODEL                                                                 PYTHIA  
 * if PYTHIA model specify pythia input cards
-PY-INPUT                                                              py_1
+PY-INPUT                                                              PY/py3.2
 * PHOJET-specific input
 * ---------------------
 * The following lines control the event-generation with PHOJET for
@@ -55,6 +55,6 @@ HISTOGRAM      101.0     102.0
 * Start of event generation
 * -------------------------
 *		number of events
-START          5000000         0.0
+START          1000000         0.0
 STOP
 *...+....1....+....2....+....3....+....4....+....5....+....6....+....7...
