@@ -9,5 +9,6 @@ Convert output root file to HEPMC format using [eic-smear v1.1.17](https://githu
 
 Notes:
 - eAg 9x115 (`runcards/eAg_9x115_*_DIS.inp`): afterburner has no eAg preset, so these samples used `abconv -p ip6_eAu_100x9`. In v0.2.1 that preset has the same beam settings as `ip6_eRu_115x9` and `ip6_eCu_115x9`.
+- eD 9x130 (`runcards/eD_9x130_DIS_*.inp`): BeAGLE generation is from May 2026. Its logs record the original May post-processing. The June 2026 reprocessing (eic-smear 1.1.17, afterburner v0.2.1, `ip6_eD_130x9`) is recorded separately in `metadata/reprocessing.jun.2026.dis.eD.9.130`.
 - afterburner v0.2.1 `abconv --version` reports 0.1.3 ([eic/afterburner#43](https://github.com/eic/afterburner/issues/43)).
 - With any named preset, v0.2.1 writes `afterburner_config_name auto` and beam energy/PDG 18/18/11 into the HepMC run info. These are unset defaults ([eic/afterburner#45](https://github.com/eic/afterburner/issues/45)); the `ab_*` attributes hold the applied settings.
