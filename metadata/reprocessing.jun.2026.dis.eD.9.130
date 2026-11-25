@@ -1,0 +1,35 @@
+eD 9x130 DIS (eN and eP): June 2026 reprocessing record
+=======================================================
+
+This is a reconstructed record, not a captured log. The June steps ran
+without saving stdout. It is assembled from the production scripts,
+the output file dates and the output run info.
+
+Generation (unchanged, May 2026)
+- BeAGLE 1.03.02 with runcards/eD_9x130_DIS_eN.inp and
+  runcards/eD_9x130_DIS_eP.inp, pythia card pythiacards/eD_9x130_S1ALL003.
+- Logs: metadata/log.may.06.2026.dis.eD_eN.9.130 and
+  metadata/log.may.06.2026.dis.eD_eP.9.130. Their appended trailer
+  records the original May post-processing (eic-smear 1.1.14,
+  abconv ip6_eD_130x9).
+
+Reprocessing (June 2026), applied to the same BeAGLE output
+1. 2026-06-09  eic-smear 1.1.17: BuildTree (.txt -> .root), then
+               TreeToHepMC (.root -> .hepmc), via BuildIt.C.
+2. 2026-06-10  afterburner v0.2.1:
+               abconv <file>.hepmc --preset ip6_eD_130x9 --plot-off -o <file>_afterburned
+               (abconv --version prints 0.1.3; see eic/afterburner#43)
+3. 2026-06-11  hepmc3ascii2root: <file>_afterburned.hepmc -> .hepmc3.tree.root
+
+Output run info (checked on campaign files)
+- ab_crossing_angle 0.025, ion beta* 940/85 mm, ion/electron horizontal
+  divergence 180/118 urad. These match afterburner v0.2.1 ip6_eD_130x9.
+- Beams: e- 9 GeV; n (eN) or p (eP) at 130 GeV.
+- afterburner_config_name auto and the beam energy/PDG fields are
+  v0.2.1 defaults, not the beam setup (eic/afterburner#45).
+
+Version source
+- No version is stamped in the June files. eic-smear 1.1.17 and
+  afterburner 0.2.1 are from the production owner, consistent with the
+  eic/containers pins in June 2026. The afterburner build that ran has
+  source identical to the v0.2.1 tag.
